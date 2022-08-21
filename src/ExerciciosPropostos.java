@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ExerciciosPropostos {
 
 	public static void main(String[] args) {
-		//Exercicio1.execute();	
+		Exercicio1.execute();	
 		Exercicio2.execute();
 	}
 }
