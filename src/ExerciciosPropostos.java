@@ -7,14 +7,18 @@ import java.util.Scanner;
 public class ExerciciosPropostos {
 
 	public static void main(String[] args) {
-		Exercicio1.execute();	
-		Exercicio2.execute();
+		Scanner input = new Scanner(System.in);
+		System.out.println("Executando exercicio 1...");
+		Exercicio1.execute(input);
+		System.out.println("\nExecutando exercicio 2...");
+		Exercicio2.execute(input);
+		input.close();
 	}
 }
 
 class Exercicio1 {
-	public static void execute() {
-		Scanner input = new Scanner(System.in);
+	public static void execute(Scanner input) {
+		
 		int count = 0;
 		Double average;
 		List<MonthAverage> averages = new ArrayList<>();
@@ -45,14 +49,12 @@ class Exercicio1 {
 				System.out.println(value + " no mes de " + MonthAverage.getMonthByIndex(next.getIndex()));
 			}
 		}
-		input.close();
 	}
 }
 
 class Exercicio2 {
-	public static void execute() {
-		Scanner input = new Scanner(System.in);
-		//int count = 0;
+	public static void execute(Scanner input) {
+		//Scanner input2 = new Scanner(System.in);
 		String answer;
 		List<Questions> questions = new ArrayList<>() {{
 			add(new Questions(false, "Telefonou para a vitima?"));
@@ -61,6 +63,7 @@ class Exercicio2 {
 			add(new Questions(false, "Devia para a vitima?"));
 			add(new Questions(false, "Já trabalhou com a vitima?"));
 		}};
+		
 		
 		Iterator<Questions> iterator = questions.iterator();
 		while (iterator.hasNext()) {
@@ -76,7 +79,6 @@ class Exercicio2 {
 		System.out.println(questions);
 		
 		System.out.println("Pessoa e " + Questions.getResult(questions));
-		input.close();
 	}
 }
 
